@@ -1,0 +1,10 @@
+body {
+    background-color: chocolate;
+}
+
+div.row {
+    text-align: center;
+    font-weight: bold;
+    width: 80vw;
+    margin: auto;
+}
