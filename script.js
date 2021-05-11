@@ -7,15 +7,17 @@ function init() {
             'albums': []
         },
         mounted() {
-            console.log("helloworld");
             axios.get('data.php')
-            .then(data =>{
-                this.albums= data.response; 
+            .then(r  =>{
+                console.log(r);
+                this.albums= r.data; 
                 for (let i = 0; i < this.albums.length; i++) {
                     const element = albums[i];
                 }                   
             })
-                .catch(() => console.log('error'));
+                .catch(e => console.log(e));
+
+
         },
         computed: {
             albumSort: function() {
