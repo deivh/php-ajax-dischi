@@ -36,7 +36,16 @@
                     }
                 ?> -->
                 <ul>
-                <li></li>
+                <li class="albumCard" 
+                    v-for="album in albumSort"
+                    :class="genre=='0' || genre==album.genre ? 'show' : 'hidden'">
+                        <img :src=album.poster alt="cover art not found">
+                        <div class="infoCard">
+                            <h2>{{album.title}}</h2>
+                            <h3>{{album.author}}</h3>
+                            <span>{{album.genre}} , {{album.year}}</span>
+                        </div>
+                    </li>
                 </ul>
         </div> 
     </div>
