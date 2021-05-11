@@ -7,9 +7,10 @@ function init() {
             'albums': []
         },
         mounted() {
+            console.log("helloworld");
             axios.get('data.php')
             .then(data =>{
-                this.albums= data.data.response; 
+                this.albums= data.response; 
                 for (let i = 0; i < this.albums.length; i++) {
                     const element = albums[i];
                 }                   
@@ -25,5 +26,6 @@ function init() {
             }
     });
 }
+
 document.addEventListener("DOMContentLoaded",init);
 init();

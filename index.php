@@ -16,29 +16,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x"></script>
     <!-- axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+    <script src="script.js"></script>
     <title>PHP</title>
-    <?php
-        require_once 'data.php';
-    ?>
 </head>
 <body>
     <div id="app" class="container">
         <div class="row">
                 <h1>Dischi</h1>
-                <!-- <?php
-                    // foreach ($db as $cd) {
-                    //     echo '<div class="box"><h1>' . $cd['title'] . '</h1>'
-                    //         . '<img src="' . $cd['poster'] . '">'
-                    //         . '<p>' . $cd['author'] . '</p>'
-                    //         . '<p>' . $cd['genre'] . '</p>'
-                    //         . '<p>' . $cd['year'] . '</p>'
-                            // . '</div>';
-                    }
-                ?> -->
+
                 <ul>
                 <li class="albumCard" 
-                    v-for="album in albumSort"
-                    :class="genre=='0' || genre==album.genre ? 'show' : 'hidden'">
+                    v-for="album in albums"
+                    >
                         <img :src=album.poster alt="cover art not found">
                         <div class="infoCard">
                             <h2>{{album.title}}</h2>
@@ -49,4 +38,5 @@
                 </ul>
         </div> 
     </div>
+</body>
 </html>
